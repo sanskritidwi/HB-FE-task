@@ -37,7 +37,7 @@ function Employee() {
 
     const deleteItem=(id)=>{
         const updatedEmployees = records.filter((curEle,ind)=>{
-return ind != id;
+return ind !== id;
         })
 
         setRecords(updatedEmployees)
@@ -49,7 +49,7 @@ return ind != id;
 
                 <form className="form-input" action='' onSubmit={handleSubmit}>
                     <div className="form-title"><p>Employee List</p></div>
-                    <div style={{ padding: '25px' }}>
+                    <div style={{ padding: '8px 25px 25px 25px' }}>
                         <div className="di-fl-co">
                             <label htmlFor="ename">Name*</label>
                             <input type='text' name="ename" autoComplete="off" placeholder='eg, John Doe' value={Employee.ename} onChange={handleInput} required></input>
@@ -66,8 +66,9 @@ return ind != id;
                         <button type="submit">ADD</button>
                     </div>
                 </form>
+                
 
-                <div style={{ height: '300px', width: '100%', overflowY: 'scroll' }} id="style-7" className="scrollbar">
+                <div style={{ height: '220px', width: '100%', overflowY: 'scroll' }} id="style-7" className="scrollbar">
 
                     {
                         records.map((curEle,ind) => {
@@ -84,13 +85,13 @@ return ind != id;
                                                 <p className="purple-p">{curEle.emobile}</p>
                                             </div>
                                         </div>
-                                        <div className="di-fl-ro" style={{ alignItems: 'center', marginTop: '20px' }}>
+                                        <div className="di-fl-ro" style={{ alignItems: 'center', marginTop: '10px' , flexWrap:'wrap'}}>
                                             <div className="di-fl-co">
                                                 <p className="grey-p">Email</p>
                                                 <p className="purple-p">{curEle.email}</p>
                                             </div>
                                             <button type='submit'
-                                                style={{ marginLeft: 'auto', marginRight: '5px' }}
+                                                style={{ marginLeft: 'auto', marginRight: '12px' }}
                                                 onClick={()=>deleteItem(ind)}
                                             >Delete</button>
                                         </div>
